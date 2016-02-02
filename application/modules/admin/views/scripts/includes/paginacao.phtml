@@ -1,0 +1,17 @@
+<div class="paginacao">
+<?php if (isset($this->previous)): ?>
+    <a href="<?php echo $this->url . $this->previous; ?>" title="Página anterior" class="prev">Anterior</a>
+<?php endif; ?>
+	<div class="paginacao-itens">
+    <?php foreach ($this->pagesInRange as $page): ?>
+        <?php if ($page != $this->current): ?>
+            <a id="page-<?php echo $page; ?>" href="<?php echo $this->url . $page; ?>" title="Página <?php echo $page; ?>"><?php echo $page; ?></a>
+        <?php else: ?>
+            <span class="active"><?php echo $page; ?></span>
+        <?php endif; ?>
+    <?php endforeach; ?>
+	</div>
+<?php if (isset($this->next)): ?>
+    <a href="<?php echo $this->url . $this->next; ?>" title="Próxima página" class="next">Próxima</a>
+<?php endif; ?>
+</div>

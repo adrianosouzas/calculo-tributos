@@ -1,0 +1,316 @@
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+html {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
+  box-sizing: inherit;
+}
+body {
+  background-color: #fff;
+  color: #333;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  width: 100%;
+}
+h1 {
+  display: table;
+  font-size: 60px;
+  margin: 20px auto;
+}
+/* Topo ----------------------------------------------------------------------------------------------------------- */
+/* Conteudo ------------------------------------------------------------------------------------------------------- */
+#content {
+  margin: 0 auto;
+  max-width: 960px;
+  width: 100%;
+}
+.btn {
+  cursor: pointer;
+  background-image: none;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  display: inline-block;
+  font-size: 14px;
+  font-weight: normal;
+  padding: 4px 12px;
+  line-height: 1.428571429;
+  margin-bottom: 0;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.btn-comprar {
+  background-color: #008000;
+  border: 1px solid #bdc3c7;
+  color: #fff;
+  font-size: 18px;
+  text-decoration: none;
+}
+.btn-comprar:hover {
+  background-color: #006400;
+}
+/* Lista de produtos */
+.produtos {
+  background-color: #fff;
+  border-radius: 2px;
+  margin: 0.5rem 0 1rem 0;
+  padding: 20px;
+  -webkit-box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
+  box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
+}
+.produtos li {
+  display: inline-block;
+  margin: 0 10px 20px;
+  max-width: 280px;
+  vertical-align: top;
+  width: 33.33333333333333%;
+}
+.produtos .box-cabecalho {
+  background: #34495e;
+  border-top-right-radius: 4px;
+  border-top-left-radius: 4px;
+  height: 235px;
+  padding: 22px 22px;
+  position: relative;
+  text-align: center;
+}
+.produtos .box-titulo {
+  color: #fff;
+  font-size: 24px;
+  font-weight: 700;
+  height: 60px;
+  letter-spacing: 2px;
+  padding-bottom: 20px;
+  text-transform: uppercase;
+  text-align: center;
+}
+.produtos .box-preco {
+  color: #fff;
+  display: block;
+  font-size: 38px;
+  font-weight: 700;
+  padding-bottom: 20px;
+  position: relative;
+  text-align: center;
+}
+.produtos .box-comprar {
+  height: 40px;
+  margin-bottom: 10px;
+  width: 100%;
+}
+.produtos .quantidade,
+.produtos .btn-comprar {
+  display: inline-block;
+  vertical-align: top;
+}
+.produtos .quantidade {
+  height: 40px;
+  text-align: center;
+  width: 40px;
+}
+.produtos .imposto {
+  color: #fff;
+  display: block;
+  font-size: 12px;
+}
+/* Tables --------------------------------------------------------------------------------------------------------- */
+table {
+  background: #fff;
+  border-collapse: collapse;
+  border: 1px solid #38678f;
+  height: 320px;
+  margin: 50px auto;
+  max-width: 960px;
+  width: 100%;
+}
+table a {
+  color: #34495e;
+  text-decoration: none;
+}
+th {
+  background: #34495e;
+  border: 1px solid #000;
+  -webkit-box-shadow: inset 0px 1px 2px #000;
+  box-shadow: inset 0px 1px 2px #000;
+  color: #fff;
+  font-weight: lighter;
+  height: 54px;
+  text-align: center;
+  text-shadow: 0 1px 0 #38678f;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+  vertical-align: middle;
+  width: 192px;
+}
+tr {
+  border-bottom: 1px solid #ccc;
+}
+td {
+  border-right: 1px solid #ccc;
+  padding: 10px;
+  text-align: center;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+  vertical-align: middle;
+  width: 192px;
+}
+/* Alertas -------------------------------------------------------------------------------------------------------- */
+.alert {
+  padding: 15px;
+  margin-bottom: 20px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+}
+.alert strong {
+  font-weight: bold;
+}
+.alert-success {
+  color: #3c763d;
+  background-color: #dff0d8;
+  border-color: #d6e9c6;
+}
+.alert-danger {
+  color: #a94442;
+  background-color: #f2dede;
+  border-color: #ebccd1;
+}
+/*
+320 pixel – Smartphones no formato retrato
+480 pixel – Smartphones no formato paisagem
+768 pixel – Tablets no formato retrato
+960 pixel – Tablets no formato paisagem e alguns monitores mais antigos
+1200 pixel – Desktops com monitores widescreen
+*/

@@ -1,0 +1,11 @@
+<tfoot>
+	<tr>
+		<td colspan="<?php echo count($this->cols)+2; ?>">
+			<?php echo $this->paginator($this->list); ?>
+			
+        <?php if ($this->controller != 'usuario') : ?>
+            <a class="new" href="<?php echo $this->url(array('action' => 'new')); ?>" >Adicionar</a>
+        <?php endif; ?>
+		</td>
+	</tr>
+</tfoot>

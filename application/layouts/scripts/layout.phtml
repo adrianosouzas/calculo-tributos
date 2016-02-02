@@ -1,0 +1,21 @@
+<?php echo $this->doctype(); ?>
+<html lang="pt-br">
+	<head>
+		<?php include_once ('includes/head.phtml'); ?>
+        <?php echo $this->headLink()
+            ->appendStylesheet('//fonts.googleapis.com/icon?family=Material+Icons')
+            ->appendStylesheet($this->baseUrl('skin/css/style.css')); ?>
+		<?php include_once ('includes/script.phtml'); ?>
+	</head>
+	<body class="page-<?php echo $this->controller ?>">
+        <header><h1>Cálculo de Tributos</h1></header>
+
+        <main>
+            <div id="content">
+                <?php echo $this->layout()->content; ?>
+            </div>
+        </main>
+
+		<footer>&nbsp;</footer>
+	</body>
+</html>

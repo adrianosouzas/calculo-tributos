@@ -1,0 +1,61 @@
+<ul class="produtos">
+    <?php foreach($this->produtos as $produto): ?>
+        <li>
+            <div class="box-produto">
+                <form id="form-comprar" action="<?php echo $this->baseUrl() ?>/cart/add" method="post">
+                    <div class="box-cabecalho">
+                        <h2 class="box-titulo"><?php echo $produto->nome ?></h2>
+                        <span class="box-preco">R$ <?php echo number_format($produto->preco, 2, ',', '.') ?></span>
+                        <div class="box-comprar">
+                            <input type="hidden" name="produto[id]" value="<?php echo $produto->id ?>" />
+                            <input type="text" class="quantidade" name="produto[quantidade]" value="1" />
+                            <input type="submit" class="btn btn-comprar" value="Comprar" />
+                        </div>
+                        <span class="imposto">
+                            <?php $imposto = $produto->preco * ($produto->imposto / 100); ?>
+                            total em impostos R$ <?php echo number_format($imposto, 2, ',', '.') ?>
+                        </span>
+                    </div>
+                </form>
+            </div>
+        </li>
+    <?php endforeach; ?>
+</ul>
+
+<?php if (isset($this->cart) && count($this->cart)):?>
+<table class="heavyTable">
+    <thead>
+        <tr>
+            <th class="nome">Nome</th>
+            <th>Preço</th>
+            <th>Quantidade</th>
+            <th>Total</th>
+            <th>Impostos</th>
+        </tr>
+    </thead>
+    <tbody>
+    <?php foreach($this->cart as $item): ?>
+        <tr>
+            <td><?php echo $item['nome'] ?></td>
+            <td>R$ <?php echo number_format($item['preco'], 2, ',', '.') ?></td>
+            <td><?php echo $item['quantidade'] ?></td>
+            <td>R$ <?php echo number_format($item['total'], 2, ',', '.') ?></td>
+            <td>R$ <?php echo number_format($item['imposto'], 2, ',', '.') ?></td>
+        </tr>
+    <?php endforeach; ?>
+    </tbody>
+    <tfooter>
+        <tr>
+            <td colspan="5">Total em Impostos R$ <?php echo number_format($this->impostos, 2, ',', '.') ?></td>
+        </tr>
+        <tr>
+            <td colspan="5">Total em Compras R$ <?php echo number_format($this->total, 2, ',', '.') ?></td>
+        </tr>
+        <tr>
+            <td colspan="5">
+                <a class="btn btn-comprar" href="<?php echo $this->baseUrl() ?>/cart/end">Finalizar Pedido</a>
+            </td>
+        </tr>
+    </tfooter>
+</table>
+<?php endif; ?>

@@ -1,0 +1,8 @@
+<div id="content-head">
+	<h2><?php echo $this->name; ?></h2>
+	<?php echo ($this->description ? '<h3>' . $this->description . '</h3>' : ''); ?>
+
+<?php if ($this->flash_message): ?>
+    <?php echo $this->Messagem($this->flash_message); ?>
+<?php endif; ?>
+</div>

@@ -1,0 +1,44 @@
+<?php echo $this->doctype(); ?>
+<html lang="pt-br">
+	<head>
+		<?php echo $this->render('/includes/head.phtml'); ?>
+        <?php echo $this->headLink()
+            ->appendStylesheet('//fonts.googleapis.com/icon?family=Material+Icons')
+            ->appendStylesheet($this->baseUrl('skin/css/admin/style.css')); ?>
+		<?php echo $this->render('/includes/script.phtml'); ?>
+	</head>
+	<body id="page-<?php echo $this->controller . '-' . $this->action; ; ?>">
+		<div id="main">
+			<div id="header">
+            <?php if ($this->auth): ?>
+                <h1><a href="<?php echo $this->baseUrl; ?>/admin"><?php echo $this->title[0]; ?></a></h1>
+
+				<div id="nav">
+					<ul>
+						<li>
+                            <a id="nav-home" href="<?php echo $this->baseUrl; ?>/admin" title="Home">
+                                <i class="material-icons">home</i>
+                            </a>
+                        </li>
+						<li>
+                            <a id="nav-logoff" href="<?php echo $this->baseUrl; ?>/admin/login/logoff" title="Sair">
+                                <i class="material-icons">exit_to_app</i>
+                            </a>
+                        </li>
+					</ul>
+				</div>
+            <?php endif; ?>
+			</div>
+			<div id="content">
+            <?php if ($this->auth): ?>
+				<div id="column-right">
+					<?php echo $this->render('includes/nav-right.phtml'); ?>
+				</div>
+            <?php endif; ?>
+				<div id="column-left">
+				    <?php echo $this->layout()->content; ?>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

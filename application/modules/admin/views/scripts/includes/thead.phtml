@@ -1,0 +1,8 @@
+<thead>
+	<tr>
+		<?php foreach ($this->cols as $id => $type): ?>
+		    <th class="<?php echo $type; ?>"><?php echo $this->translate($id); ?></th>
+		<?php endforeach; ?>
+		<th class="last">...</th>
+	</tr>
+</thead>

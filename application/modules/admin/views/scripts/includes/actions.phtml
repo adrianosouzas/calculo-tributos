@@ -1,0 +1,11 @@
+<td class="last">
+<?php if ($this->controller != 'usuario'): ?>
+	<a class="delete" title="Excluir" href="<?php echo $this->url(array('action' => 'del')); ?>/id/<?php echo $this->item['id']; ?>">
+        <i class="material-icons">delete</i>
+    </a>
+
+    <a class="edit" title="Editar" href="<?php echo $this->baseUrl . '/admin/' . $this->controller . '/edit/id/' . $this->item['id']; ?>">
+        <i class="material-icons">mode_edit</i>
+    </a>
+<?php endif; ?>
+</td>

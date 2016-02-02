@@ -1,0 +1,7 @@
+<?php echo $this->render('includes/content-head.phtml'); ?>
+<div id="content-body">
+	<h3>Dados</h3>
+	<?php echo $this->form->setAction($this->url(array('action' => 'save'))); ?>
+	<h3>Senha</h3>
+	<?php echo $this->form_senha->setAction($this->url(array('action' => 'save-senha'))); ?>
+</div>

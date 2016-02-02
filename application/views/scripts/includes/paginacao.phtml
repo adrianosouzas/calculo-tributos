@@ -1,0 +1,17 @@
+<div class="pagination">
+	<a href="<?php echo $this->url(array('pagina' => $this->previous)); ?>" class="bt-paginacao-prev">Anterior</a>
+
+	<?php foreach ($this->pagesInRange as $page): ?>
+		<?php if ($page != $this->current): ?>
+			<a title="<?php echo $page; ?>" href="<?php echo $this->url(array('pagina' => $page)); ?>" class="page"><?php echo $page; ?></a>
+		<?php else: ?>
+			<a class="current page" title="<?php echo $page; ?>" href="<?php echo $this->url(array('pagina' => $page)); ?>"><?php echo $page; ?></a>
+		<?php endif; ?>
+	<?php endforeach; ?>
+
+	<a href="<?php echo $this->url(array('pagina' => $this->next)); ?>" class="bt-paginacao-next">Próxima</a>
+	
+	
+	<a class="next-ajax" href="<?php echo $this->url(array('pagina' => $this->next)); ?>">Exibir mais resultados</a>
+	
+</div>

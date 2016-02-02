@@ -1,0 +1,20 @@
+<?php foreach($this->produtos as $produto): ?>
+    <div class="col-md-4 col-sm-12 col-xs-12">
+        <div class="pricing-table">
+            <div class="pricing-header">
+                <h2 class="pricing-title"><?php echo $produto->nome ?></h2>
+                <span class="pricing-rate"><span>R$</span> <?php echo number_format($produto->preco, 2, ',', '.') ?></span>
+                <a href="#" class="btn btn-custom">And Get Free Month</a>
+            </div>
+
+            <div class="pricing-list">
+                <ul>
+                    <li><i class="fa fa-envelope"></i>1,000 messages</li>
+                    <li><i class="fa fa-signal"></i><span>limited</span> data</li>
+                    <li><i class="fa fa-user"></i><span>limited</span> users</li>
+                    <li><i class="fa fa-smile-o"></i>first 10 day free</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+<?php endforeach; ?>

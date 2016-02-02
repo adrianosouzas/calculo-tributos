@@ -1,0 +1,25 @@
+<?php
+$description = $this->element->getDescription();
+$errors = $this->element->getErrors();
+$messages = $this->element->getMessages();
+?>
+<li id="li-<?php echo $this->element->getId(); ?>">
+	<label for="<?php echo $this->element->getId(); ?>"<?php echo $this->element->isRequired() ? ' class="required"' : ''; ?>><?php echo $this->element->getLabel(); ?></label>
+	<?php
+	$decorator = new Zend_Form_Decorator_ViewHelper(array());
+	
+	if (count($errors)) {
+		$class = $this->element->getAttrib('class');
+		$this->element->setAttrib('class', $class . ' error');
+	}
+	
+	$decorator->setElement($this->element);
+	echo $decorator->render('');
+	?>
+	<?php if ($description): ?>
+	<div class="hint"><?php echo $description; ?></div>
+	<?php endif; ?>
+	<?php if (count($errors)):?>
+		<div class="error"><?php echo $messages[$errors[0]]; ?></div>
+	<?php endif; ?>
+</li>

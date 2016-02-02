@@ -1,0 +1,35 @@
+<tbody>
+<?php if ($this->list->count()): ?>
+    <?php foreach ($this->list as $item): ?>
+    <tr>
+    <?php foreach ($this->cols as $id => $type): $item[$id] = is_array($item[$id]) ? implode(', ', $item[$id]) : $item[$id]; ?>
+        <td class="<?php echo $type; ?>">
+        <?php if ($type == 'date'): ?>
+            <?php echo $this->date($item[$id]); ?>
+        <?php elseif ($type == 'datetime'): ?>
+            <?php echo $this->date($item[$id], 'dd/MM/yyyy HH:mm:ss'); ?>
+        <?php elseif ($type == 'image'): ?>
+            <a class="box-image" href="<?php echo $this->image($this->controller . '/' . $item[$id], 800, 600, 'fill'); ?>" title="<?php echo $item[$id]; ?>" class="media">
+                <img src="<?php echo $this->image($this->controller . '/' . $item[$id], 75, 56, 'fill'); ?>" width="75" height="56" />
+            </a>
+        <?php else: ?>
+            <?php echo isset($item[$id]) && $item[$id] ? $this->translate($item[$id]) : $item[$id]; ?>
+        <?php endif; ?>
+        </td>
+    <?php endforeach; ?>
+
+        <?php $this->item = $item; ?>
+
+        <?php try { ?>
+            <?php echo $this->render('/' . $this->controller . '/actions.phtml'); ?>
+        <?php } catch (Exception $e) { ?>
+            <?php echo $this->render('/includes/actions.phtml'); ?>
+        <?php } ?>
+    </tr>
+    <?php endforeach; ?>
+<?php else: ?>
+    <tr>
+        <td colspan="<?php echo count($this->cols)+2; ?>">Nenhum item encontrado.</td>
+    </tr>
+<?php endif; ?>
+</tbody>
